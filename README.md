@@ -1,117 +1,119 @@
-# 🧱 A-5 Dev Stack Builder Website
+# 🧱 Dev Stack Builder
 
-Dev Stack Builder is a responsive React website for exploring development technologies and building a custom stack. Technology information is loaded from a local JSON file, while the selected stack is managed with React state and React Toastify feedback.
+Dev Stack Builder is a responsive React web application that helps developers explore different technologies and build their own technology stack. Users can browse technologies, view their details, and add or remove technologies from their personal stack.
+
+## 🚀 Live Website
+
+Add your live website link here.
+
+## 📂 GitHub Repository
+
+Add your GitHub repository link here.
 
 ## 🛠️ Technologies Used
 
-- React.js
-- Vite
-- JavaScript ES6+
-- CSS3
-- React Toastify
-- JSON
+* React.js
+* JavaScript (ES6+)
+* Tailwind CSS
+* CSS
+* React-Toastify
+* JSON
+* Vite
 
-## ✨ 3 Main Features
+## ✨ Features
 
-1. Explore frontend, backend, database, language, styling, and DevOps technologies from local JSON data.
-2. Add technologies to a personal stack with duplicate protection, remove actions, and a Remove All button.
-3. Fully responsive UI with sticky navigation, mobile hamburger menu, loading state, toast notifications, and a shared gradient brand theme.
+### 1. Technology Explorer
 
-## 📁 Project Structure
+Browse different development technologies with their icons, categories, descriptions, difficulty levels, badges, and ratings.
+
+### 2. Build Your Stack
+
+Users can add technologies to their personal stack. Added technologies cannot be added twice and can be removed individually or all at once.
+
+### 3. Responsive Design
+
+The website is fully responsive and works across desktop, tablet, and mobile devices with a responsive navigation menu.
+
+## 📦 Project Structure
 
 ```text
-public/
-  data/
-    technologies.json
 src/
-  assets/
-    hamburger.png
-    hero-stack.png
-    YourStack-with.png
-    YourStack-without.png
-  components/
-    Brand/
-      Brand.jsx
-    Navbar/
-      Navbar.jsx
-    Hero/
-      Hero.jsx
-    Technologies/
-      Technologies.jsx
-    TechCard/
-      TechCard.jsx
-    StackPanel/
-      StackPanel.jsx
-    InfoSection/
-      InfoSection.jsx
-    Footer/
-      Footer.jsx
-  App.jsx
-  main.jsx
-  styles.css
-index.html
-package.json
-vite.config.js
-README.md
+├── components/
+│   ├── Brand/
+│   ├── Hero/
+│   ├── Navbar/
+│   ├── TechnologyCard/
+│   └── StackPanel/
+├── data/
+│   └── technologies.json
+├── App.jsx
+├── styles.css
+└── main.jsx
 ```
 
-## ▶️ Run Locally
+## 🔔 Notifications
 
-```bash
-npm install
-npm run dev
-```
+React-Toastify is used to provide feedback when users:
 
-## 🧠 React Questions
+* Add a technology
+* Try to add a duplicate technology
+* Remove a technology
+* Remove all technologies
 
-### 1. What is JSX, and why is it used in React?
+## ⏳ Loading State
 
-JSX is a syntax that lets us write HTML-like UI inside JavaScript. React uses JSX because it makes component structure easier to read and maintain.
+The technology information is loaded from a local JSON file. A loading state is displayed while the data is being fetched.
 
-### 2. What is the difference between props and state?
+---
 
-Props are values passed from a parent component to a child component. State is data managed inside a component that can change and update the UI.
+# 📚 React Questions & Answers
 
-### 3. What does the `useState` hook do, and where did you use it in this project?
+## 1. What is JSX, and why is it used in React?
 
-`useState` stores changing values in a React function component. This project uses it for the mobile menu, technology data, loading status, and selected stack.
+JSX is a syntax that lets us write HTML-like code inside JavaScript. It makes React components easier to read and allows us to describe the UI directly inside our JavaScript code.
 
-### 4. What does the `useEffect` hook do, and why did you need it to load the JSON data?
+## 2. What is the difference between props and state?
 
-`useEffect` runs side effects after a component renders. It is used here to fetch `technologies.json` when the app starts and then place the data into state.
+Props are data passed from a parent component to a child component. State is data managed inside a component that can change over time and cause the UI to update.
 
-### 5. Why does every item in a `.map()` list need a unique `key` prop?
+## 3. What does the `useState` hook do, and where did you use it in this project?
 
-A unique `key` helps React identify each item between renders so React can update the list efficiently and correctly.
+`useState` allows a component to store and update data. In this project, it is used for things such as the selected technology stack, loading state, and mobile menu state.
 
-### 6. What is conditional rendering? Show one place you used it.
+## 4. What does the `useEffect` hook do, and why did you need it to load the JSON data?
 
-Conditional rendering means showing different UI depending on a condition. In this project, the stack panel shows “Your stack is empty.” when the selected stack has no items and shows stack cards when items exist.
+`useEffect` runs code after a component renders. I used it to fetch the technology data from the JSON file when the application loads.
 
-### 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
+## 5. Why does every item in a `.map()` list need a unique `key` prop?
 
-A parent passes data to a child through props. A child can communicate back by calling a callback function that the parent passes as a prop. This project uses callbacks such as `onAdd`, `onRemove`, and `onRemoveAll`.
+React uses the `key` to identify each item in a list. A unique key helps React efficiently determine which items have changed, been added, or been removed.
 
-## ✅ Assignment Checklist
+## 6. What is conditional rendering? Show one place you used it.
 
-- Navbar follows the UI structure.
-- Sticky desktop navbar.
-- Mobile navbar with hamburger, centered brand, Sign In, and Sign Up.
-- Hero heading, description, two buttons, and banner image.
-- 12 technology records in local JSON.
-- Technology data is loaded from `technologies.json` instead of a hardcoded component array.
-- Technology cards include icon, badge, name, description, category, difficulty, rating, and Add to Stack button.
-- 3-column desktop grid.
-- 2-column tablet grid.
-- 1-column mobile grid.
-- Your Stack sidebar with empty and selected states.
-- Duplicate technology protection.
-- Added card button becomes disabled and reads `✓ Added to Stack`.
-- Individual remove functionality.
-- Remove All functionality.
-- Footer with brand block, social links, Product, Company, and Legal groups.
-- Responsive layout.
-- React Toastify for add, duplicate, remove, and remove-all feedback.
-- Loading state while local JSON is fetched.
-- One shared brand gradient variable used by the brand name, hero highlight, and primary buttons.
-- GitHub README with project information, technologies, three features, and all seven React questions.
+Conditional rendering means showing different UI based on a condition.
+
+I used it in the Your Stack section. When no technology is selected, the empty-stack message is displayed. When technologies are selected, the stack items are displayed instead.
+
+## 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
+
+A parent sends data to a child through props. A child can send information back to the parent by calling a function that the parent passes to it as a prop.
+
+---
+
+## 📌 Assignment Highlights
+
+* Shared orange → pink → violet gradient theme
+* Responsive sticky navigation
+* Technology cards with dynamic JSON data
+* Interactive personal technology stack
+* Add, remove, and remove-all functionality
+* Duplicate technology prevention
+* Toast notifications
+* Loading state
+* Responsive mobile layout
+
+## 👨‍💻 Author
+
+**Anwar Sadek**
+
+Built with React.js and modern frontend technologies.
