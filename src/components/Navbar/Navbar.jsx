@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Brand from '../Brand/Brand';
 
@@ -28,7 +29,10 @@ function Navbar() {
             Sign In
           </a>
 
-          <a href="#signup" className="signup">
+          <a
+            href="#signup"
+            className="signup bg-gradient-to-r from-cyan-500 to-blue-600"
+          >
             Sign Up
           </a>
 

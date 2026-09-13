@@ -4,7 +4,6 @@ import { toast } from 'react-toastify';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import Technologies from './components/Technologies/Technologies';
-// import InfoSection from './components/InfoSection/InfoSection';
 import Footer from './components/Footer/Footer';
 
 function App() {

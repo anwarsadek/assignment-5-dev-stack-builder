@@ -9,7 +9,7 @@ function Hero() {
           <h1 className="text-5xl font-bold leading-tight tracking-tight text-slate-900 md:text-6xl">
             Build Your Ideal
             <br />
-            <span className="text-indigo-600">Development Stack</span>
+            <span className="gradient-text">Development Stack</span>
           </h1>
 
           <p className="mt-5 max-w-xl text-base leading-7 text-slate-500">
@@ -21,7 +21,7 @@ function Hero() {
           <div className="mt-7 flex flex-wrap gap-3">
             <a
               href="#technologies"
-              className="rounded-lg bg-indigo-600 px-5 py-3 text-sm font-semibold text-white hover:bg-indigo-700"
+              className="primary-btn"
             >
               Explore Technologies
             </a>

@@ -1,9 +1,17 @@
+
 @import "tailwindcss";
 
 :root {
-  --brand-gradient: linear-gradient(90deg, #22c55e 0%, #16a34a 50%, #0f766e 100%);
-  --brand-green: #16a34a;
-  --brand-dark-green: #0f766e;
+  /* EXACT GRADIENT USED BY "Stack" IN BRAND */
+  --brand-gradient: linear-gradient(
+    90deg,
+    #06b6d4 0%,
+    #3b82f6 100%
+  );
+
+  --brand-cyan: #06b6d4;
+  --brand-blue: #3b82f6;
+
   --navy: #0b1220;
   --text: #152036;
   --muted: #71809a;
@@ -23,7 +31,8 @@ html {
 body {
   margin: 0;
   padding-top: 70px;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--text);
   background: var(--page);
   line-height: 1.6;
@@ -40,7 +49,7 @@ button {
 
 button:focus-visible,
 a:focus-visible {
-  outline: 3px solid rgba(22, 163, 74, .28);
+  outline: 3px solid rgba(59, 130, 246, 0.28);
   outline-offset: 3px;
 }
 
@@ -54,6 +63,10 @@ img {
   margin: 0 auto;
 }
 
+/* =========================
+   GRADIENT
+========================= */
+
 .gradient-text {
   background: var(--brand-gradient);
   -webkit-background-clip: text;
@@ -61,13 +74,17 @@ img {
   color: transparent;
 }
 
+/* =========================
+   NAVBAR
+========================= */
+
 .site-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 9999;
-  background: rgba(255, 255, 255, .95);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line);
@@ -106,6 +123,8 @@ img {
   font-size: 10px;
   font-weight: 900;
   border-radius: 7px;
+
+  /* CYAN → BLUE */
   background: var(--brand-gradient);
 }
 
@@ -119,12 +138,12 @@ img {
   color: #56647b;
   font-size: 13px;
   font-weight: 600;
-  transition: color .2s ease;
+  transition: color 0.2s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--brand-green);
+  color: var(--brand-blue);
 }
 
 .auth-actions {
@@ -139,14 +158,29 @@ img {
   font-weight: 600;
 }
 
+/* =========================
+   SIGN UP
+   SAME GRADIENT AS "STACK"
+========================= */
+
 .signup {
   color: #fff;
   background: var(--brand-gradient);
   padding: 10px 17px;
   border-radius: 999px;
   font-weight: 700;
-  box-shadow: 0 9px 20px rgba(22, 163, 74, .16);
+  box-shadow: 0 9px 20px rgba(59, 130, 246, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.signup:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 11px 24px rgba(59, 130, 246, 0.28);
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
 
 .mobile-menu-button {
   display: none;
@@ -164,6 +198,10 @@ img {
   object-fit: contain;
 }
 
+/* =========================
+   HERO
+========================= */
+
 .hero {
   padding: 90px 0 112px;
   background: #fff;
@@ -171,7 +209,7 @@ img {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.12fr .88fr;
+  grid-template-columns: 1.12fr 0.88fr;
   align-items: center;
   gap: 50px;
 }
@@ -179,10 +217,26 @@ img {
 .hero h1 {
   margin: 0;
   font-size: clamp(44px, 5.3vw, 72px);
-  line-height: .98;
+  line-height: 0.98;
   letter-spacing: -0.055em;
   color: #101a2f;
 }
+
+/* =========================
+   DEVELOPMENT STACK
+   CYAN → BLUE
+========================= */
+
+.hero .gradient-text {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* =========================
+   HERO TEXT
+========================= */
 
 .hero-text {
   max-width: 600px;
@@ -208,14 +262,29 @@ img {
   border-radius: 8px;
   font-weight: 700;
   font-size: 13px;
-  transition: transform .2s ease, box-shadow .2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* =========================
+   EXPLORE TECHNOLOGIES
+   CYAN → BLUE + WHITE TEXT
+========================= */
+
 .primary-btn {
-  color: #fff;
+  color: #ffffff;
   background: var(--brand-gradient);
-  box-shadow: 0 10px 25px rgba(22, 163, 74, .16);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.18);
 }
+
+.primary-btn:hover {
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(59, 130, 246, 0.28);
+}
+
+/* =========================
+   SECONDARY BUTTON
+========================= */
 
 .secondary-btn {
   background: #fff;
@@ -223,10 +292,13 @@ img {
   border: 1px solid #dce2eb;
 }
 
-.primary-btn:hover,
 .secondary-btn:hover {
   transform: translateY(-1px);
 }
+
+/* =========================
+   HERO ART
+========================= */
 
 .hero-art-wrap {
   position: relative;
@@ -240,15 +312,28 @@ img {
   width: 260px;
   height: 260px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(34, 197, 94, .2), rgba(15, 118, 110, .03) 60%, transparent 70%);
+
+  background: radial-gradient(
+    circle,
+    rgba(6, 182, 212, 0.20),
+    rgba(59, 130, 246, 0.08) 60%,
+    transparent 70%
+  );
+
   filter: blur(5px);
 }
 
 .hero-art {
   position: relative;
   width: min(360px, 100%);
-  filter: drop-shadow(0 22px 34px rgba(22, 163, 74, .13));
+  filter: drop-shadow(
+    0 22px 34px rgba(59, 130, 246, 0.13)
+  );
 }
+
+/* =========================
+   TECHNOLOGIES
+========================= */
 
 .technology-section {
   padding: 34px 0 100px;
@@ -290,7 +375,7 @@ img {
   background: var(--surface);
   border: 1px solid #e7ebf2;
   border-radius: 13px;
-  box-shadow: 0 5px 18px rgba(26, 37, 61, .03);
+  box-shadow: 0 5px 18px rgba(26, 37, 61, 0.03);
   display: flex;
   flex-direction: column;
 }
@@ -393,7 +478,7 @@ img {
   font-size: 11px;
   font-weight: 700;
   cursor: pointer;
-  transition: transform .15s ease, opacity .15s ease;
+  transition: transform 0.15s ease, opacity 0.15s ease;
 }
 
 .stack-btn:not(:disabled):hover {
@@ -402,13 +487,17 @@ img {
 
 .stack-btn:disabled {
   cursor: default;
-  opacity: .72;
+  opacity: 0.72;
 }
 
 .stack-btn.added {
   background: #e9edf4;
   color: #4a576a;
 }
+
+/* =========================
+   STACK PANEL
+========================= */
 
 .stack-panel {
   position: sticky;
@@ -417,7 +506,7 @@ img {
   border-radius: 14px;
   background: var(--surface);
   border: 1px solid #e4e8f0;
-  box-shadow: 0 5px 18px rgba(26, 37, 61, .03);
+  box-shadow: 0 5px 18px rgba(26, 37, 61, 0.03);
 }
 
 .stack-heading h2 {
@@ -500,6 +589,10 @@ img {
   cursor: pointer;
 }
 
+/* =========================
+   LOADING
+========================= */
+
 .loading-state {
   min-height: 300px;
   display: grid;
@@ -516,9 +609,9 @@ img {
   width: 26px;
   height: 26px;
   border: 3px solid #e9edf5;
-  border-top-color: var(--brand-green);
+  border-top-color: var(--brand-blue);
   border-radius: 50%;
-  animation: spin .9s linear infinite;
+  animation: spin 0.9s linear infinite;
 }
 
 @keyframes spin {
@@ -526,6 +619,10 @@ img {
     transform: rotate(360deg);
   }
 }
+
+/* =========================
+   FOOTER
+========================= */
 
 .footer {
   background: #fff;
@@ -535,7 +632,7 @@ img {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.6fr .7fr .7fr .7fr;
+  grid-template-columns: 1.6fr 0.7fr 0.7fr 0.7fr;
   gap: 70px;
   padding-bottom: 50px;
 }
@@ -556,7 +653,7 @@ img {
 .footer-links h4 {
   margin: 0 0 5px;
   font-size: 11px;
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
 }
 
 .footer-links a {
@@ -590,6 +687,10 @@ img {
   gap: 20px;
 }
 
+/* =========================
+   TOAST
+========================= */
+
 .Toastify__toast-container {
   z-index: 99999 !important;
 }
@@ -601,8 +702,13 @@ img {
 }
 
 .Toastify__toast-body {
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
+
+/* =========================
+   TABLET
+========================= */
 
 @media (max-width: 980px) {
   .navbar {
@@ -625,6 +731,10 @@ img {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 720px) {
   .container {
@@ -674,7 +784,7 @@ img {
     border: 1px solid var(--line);
     border-radius: 13px;
     background: #fff;
-    box-shadow: 0 15px 40px rgba(21, 32, 54, .1);
+    box-shadow: 0 15px 40px rgba(21, 32, 54, 0.1);
   }
 
   .nav-links.show {
@@ -738,6 +848,10 @@ img {
     flex-direction: column;
   }
 }
+
+/* =========================
+   SMALL MOBILE
+========================= */
 
 @media (max-width: 430px) {
   .navbar {
