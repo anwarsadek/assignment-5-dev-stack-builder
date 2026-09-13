@@ -3,24 +3,44 @@ import heroStack from '../../assets/hero-stack.png';
 
 function Hero() {
   return (
-    <section className="hero" id="home">
-      <div className="container hero-grid">
-        <div className="hero-copy">
-          <h1>
-            Build Your Ideal<br />
-            <span className="gradient-text">Development Stack</span>
+    <section id="home" className="bg-white py-16 md:py-24">
+      <div className="mx-auto grid max-w-[1080px] items-center gap-10 px-5 md:grid-cols-2">
+        <div>
+          <h1 className="text-5xl font-bold leading-tight tracking-tight text-slate-900 md:text-6xl">
+            Build Your Ideal
+            <br />
+            <span className="text-indigo-600">Development Stack</span>
           </h1>
-          <p className="hero-text">
-            Explore frontend, backend, database, and tooling options, compare them side by side, and put together the stack that fits your next project.
+
+          <p className="mt-5 max-w-xl text-base leading-7 text-slate-500">
+            Explore frontend, backend, database, and tooling options, compare
+            them side by side, and put together the stack that fits your next
+            project.
           </p>
-          <div className="hero-actions">
-            <a href="#technologies" className="primary-btn">Explore Technologies</a>
-            <a href="#about" className="secondary-btn">Learn More</a>
+
+          <div className="mt-7 flex flex-wrap gap-3">
+            <a
+              href="#technologies"
+              className="rounded-lg bg-indigo-600 px-5 py-3 text-sm font-semibold text-white hover:bg-indigo-700"
+            >
+              Explore Technologies
+            </a>
+
+            <a
+              href="#about"
+              className="rounded-lg border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-600 hover:bg-slate-50"
+            >
+              Learn More
+            </a>
           </div>
         </div>
-        <div className="hero-art-wrap">
-          <div className="hero-glow" aria-hidden="true"></div>
-          <img src={heroStack} alt="Development technology stack illustration" className="hero-art" />
+
+        <div className="flex justify-center">
+          <img
+            src={heroStack}
+            alt="Development technology stack illustration"
+            className="w-full max-w-sm"
+          />
         </div>
       </div>
     </section>
