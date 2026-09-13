@@ -102,7 +102,7 @@ A parent sends data to a child through props. A child can send information back 
 
 ## 📌 Assignment Highlights
 
-* Shared orange → pink → violet gradient theme
+* Shared orange → blue gradient theme
 * Responsive sticky navigation
 * Technology cards with dynamic JSON data
 * Interactive personal technology stack
