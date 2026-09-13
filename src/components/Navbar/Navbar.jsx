@@ -33,7 +33,7 @@ function Navbar() {
 
           <a
             href="#signup"
-            className="rounded-full bg-green-600 px-4 py-2 text-sm font-semibold text-white hover:bg-green-700"
+            className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-4 py-2 text-xs font-bold text-white shadow-md shadow-cyan-200 transition hover:-translate-y-0.5 hover:shadow-lg"
           >
             Sign Up
           </a>
